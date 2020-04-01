@@ -2,7 +2,7 @@
 set my_inbox="=INBOX"
 set my_drafts="=Drafts"
 set my_sent="=Sent Items"
-set my_current_archive="=Archives/$current_year"
+set my_current_archive="=Archives/$my_current_year"
 set my_trash="=trash"
 set my_domain = "postecert.it"
 set my_mail_server = "mail.$my_domain"
@@ -31,7 +31,6 @@ set trash = $my_trash
 unmailboxes *
 # set imap_check_subscribed
 mailboxes \
-	"* POSTECERT *" \
 	$my_inbox \
 	=Archives/2019 \
 	$my_current_archive \
@@ -41,5 +40,5 @@ mailboxes \
 set signature = $realname
 
 # reload bindings with the new variables
-source $mhome/bindings 
+source $my_mhome/bindings 
 # vim: ft=neomuttrc

@@ -1,9 +1,9 @@
 # user defined variables
-set my_inbox="=GOODBOX"
-set my_drafts="=Bozze"
-set my_current_archive="=Archivio/$current_year"
-set my_sent="=Posta inviata"
-set my_trash="=Posta eliminata"
+set my_inbox = "=GOODBOX"
+set my_drafts = "=Bozze"
+set my_current_archive = "=Archivio/$my_current_year"
+set my_sent = "=Posta inviata"
+set my_trash = "=Posta eliminata"
 set my_user = "d7392@italiaonline.it"
 set my_pass = "`secret-tool lookup mail-app-pass d7392@italiaonline.it`"
 
@@ -17,9 +17,6 @@ set imap_user = $my_user
 set imap_pass = $my_pass
 set smtp_url = "smtp://$my_user@smtp.office365.com:587/"
 set smtp_pass = $my_pass
-# set ssl_starttls = yes
-# set ssl_force_tls = yes
-# set ssl_use_sslv3 = yes
 set spoolfile = $my_inbox
 set postponed = $my_drafts
 set trash = $my_trash
@@ -40,5 +37,5 @@ mailboxes \
 set signature = "~/bin/NEQMailSignature.sh|"
 
 # reload bindings with the new variables
-source $mhome/bindings
+source $my_mhome/bindings
 # vim: ft=neomuttrc

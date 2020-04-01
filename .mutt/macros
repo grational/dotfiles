@@ -1,0 +1,9 @@
+macro index,pager <f2> '<sync-mailbox><enter-command>source $my_acc_dir/$my_iol_gr<enter><change-folder>!<enter>' "Work"
+macro index,pager <f3> '<sync-mailbox><enter-command>source $my_acc_dir/$my_gmail_gr<enter><change-folder>!<enter>' "Personal"
+macro index,pager <f4> '<sync-mailbox><enter-command>source $my_acc_dir/$my_gmail_sn<enter><change-folder>!<enter>' "Soul Nassau"
+macro index,pager <f5> '<sync-mailbox><enter-command>source $my_acc_dir/$my_polito_gr<enter><change-folder>!<enter>' "Polito"
+macro index,pager <f6> '<sync-mailbox><enter-command>source $my_acc_dir/$my_cert_gr<enter><change-folder>!<enter>' "Posta Certificata"
+# macro to jump to the next unread message
+macro index,pager \C]   '<next-unread-mailbox><enter><next-new-then-unread><enter>' "Go to new mail"
+
+# vim: ft=neomuttrc

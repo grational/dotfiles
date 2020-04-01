@@ -4,13 +4,12 @@ set from = "giuseppe.ricupero@gmail.com"
 set my_pass = "`secret-tool lookup mail-app-pass giuseppe.ricupero@gmail.com`"
 
 # it uses $from
-source $acc_dir/com.gmail.settings
+source $my_acc_dir/com.gmail.settings
 
 unset signature
 
 unmailboxes *
 mailboxes \
-	"* PERSONAL *" \
 	$my_inbox \
 	$my_inbox/agenda \
 	$my_inbox/sella \

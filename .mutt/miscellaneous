@@ -1,0 +1,73 @@
+# editor settings
+bind editor <space> noop
+# bind editor <Tab>   complete-query
+set edit_headers
+set editor = "nvim -c Goyo +/^$"
+set charset = "utf-8"
+
+## general settings
+# don't ask me confirmation when I move messages around
+set confirmappend = no
+# if there are attachments ask me to forward them too
+set mime_forward
+set include
+set fast_reply
+set bounce
+# use idle extension of the imap protocol
+set imap_idle = yes
+set imap_keepalive = 60
+# store message headers locally to speed things up
+# set header_cache = $my_mhome/cache/headers
+set message_cachedir = $my_mhome/cache/bodies
+# run the purge_cache script to avoid a message cache > my_message_cache_max_size
+set my_message_cache_max_size = '100M'
+source "find $message_cachedir -size 0 -delete |"
+source "~/bin/purge_cachedir.sh $message_cachedir $my_message_cache_max_size |"
+
+## experimental section
+# set attach_save_dir = `xdg-user-dir DOWNLOAD`
+timeout-hook 'exec sync-mailbox'
+# macro index,pager      a "<pipe-message>khard add-email -a \$from<enter>"   'Add sender to addressbook'
+macro compose        \eah "\
+<filter-entry>asciidoctor -s -<enter>y\
+<edit-type>text/html; charset=utf-8       <enter>"                        'Convert Asciidoctor to HTML'
+macro compose        \emh "\
+<filter-entry>pandoc -s -f markdown -t html <enter>y\
+<edit-type>text/html; charset=utf-8       <enter>"                        'Convert Markdown to HTML'
+macro compose        \ehm "\
+<filter-entry>pandoc -s -f html -t markdown <enter>y\
+<edit-type>text/plain; charset=us-ascii   <enter>"                        'Convert HTML to Markdown'
+
+# don't wait for 1 second before applying changes
+set sleep_time = 0
+# don't ask for confirmation when you delete a message
+set delete = yes
+set pager_context=5  # Retain 5 lines of previous page when scrolling.
+set status_on_top    # Status bar on top.
+push <show-version>  # Shows mutt version at startup
+# remove + at the beginning of line when wrap, so that I can use URLs extraction
+set markers = no
+# gmail like email threads organization
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
+
+# color sidebar_new yellow default
+# The index_format allows you to set what will shown for every mail in the index view
+# This is a classical example that display the sender, the flags, the date, the subject, the size of the mail and so on.
+set index_format = "%4C %Z %{%b %d} %-15.15L %?M?(#%03M)&(%4l)? %?y?{%.20y}? %?g?{%.20g} ?%s (%c)"
+# You can also configure the text that is present on the status bar:
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+# You can configure Mutt so that the index view is always visible when you read mails. For instance, to always show 8 mails in the index:
+set pager_index_lines=12
+# don't go to the next/previous message scrolling up/down the pager
+set pager_stop = yes
+# update stats on mail on the sidebar
+set mail_check_stats = yes
+## Reload config
+# Forward a certain message to todoist and archive it
+macro index,pager \Ct "<enter-command>set forward_edit=no<enter><forward-message>todoist-inbox<enter><enter-command>set forward_edit=yes<enter>y<save-message>$my_current_archive<enter>" "Forwarded to todoist and archived!"
+macro index,pager <f12> '<enter-command> set my_status="Reloaded configuration"; source $my_mhome/muttrc; set ?my_status<enter>'	"reload muttrc"
+## experimental section end
+
+# vim: ft=neomuttrc

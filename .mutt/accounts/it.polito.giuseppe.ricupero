@@ -2,7 +2,7 @@
 set my_inbox="=INBOX"
 set my_drafts="=Drafts"
 set my_sent="=Sent"
-set my_current_archive="=Archives/$current_year"
+set my_current_archive="=Archives/$my_current_year"
 set my_trash="=Trash"
 set my_user = "giuseppe.ricupero"
 set my_domain = "polito.it"
@@ -31,7 +31,6 @@ set record = $my_sent
 unmailboxes *
 # set imap_check_subscribed
 mailboxes \
-	"* POLITO *" \
 	$my_inbox \
 	$my_current_archive \
 	$my_sent
@@ -40,5 +39,5 @@ mailboxes \
 set signature = $realname
 
 # reload bindings with the new variables
-source $mhome/bindings 
+source $my_mhome/bindings 
 # vim: ft=neomuttrc

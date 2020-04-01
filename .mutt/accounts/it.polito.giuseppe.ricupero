@@ -1,0 +1,44 @@
+# user defined variables
+set my_inbox="=INBOX"
+set my_drafts="=Drafts"
+set my_sent="=Sent"
+set my_current_archive="=Archives/$current_year"
+set my_trash="=Trash"
+set my_user = "giuseppe.ricupero"
+set my_domain = "polito.it"
+set my_mail_server = "mail.$my_domain"
+set my_pass = "`secret-tool lookup mail-pass giuseppe.ricupero@polito.it`"
+
+# user
+set realname = "Giuseppe Ricupero"
+set from = $my_user
+
+# connection
+set folder = "imaps://$my_mail_server"
+set imap_user = $my_user
+set imap_pass = $my_pass
+set smtp_url = "smtps://$my_user@$my_domain@$my_mail_server:465"
+set smtp_pass = $my_pass
+
+# folder related variables
+set spoolfile = $my_inbox
+set postponed = $my_drafts
+set trash = $my_trash
+set copy = yes
+set record = $my_sent
+
+# sidebar manipulation
+unmailboxes *
+# set imap_check_subscribed
+mailboxes \
+	"* POLITO *" \
+	$my_inbox \
+	$my_current_archive \
+	$my_sent
+
+# signature directly from a script
+set signature = $realname
+
+# reload bindings with the new variables
+source $mhome/bindings 
+# vim: ft=neomuttrc

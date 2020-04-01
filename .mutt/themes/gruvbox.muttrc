@@ -1,0 +1,17 @@
+# Colours
+color attachment color166 default
+color hdrdefault color166 default
+color indicator black blue
+color normal white default
+color message color208 default
+color error brightred default
+color tree brightwhite default
+color signature brightcyan default
+color quoted blue default
+color markers red default
+color bold color208 default
+color tilde green default
+color search brightcyan default
+color status black color166
+color underline brightmagenta default
+# vim: ft=muttrc

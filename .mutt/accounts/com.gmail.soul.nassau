@@ -1,0 +1,15 @@
+# user
+set realname = "Soul Nassau"
+set from = "soul.nassau@gmail.com"
+set my_pass = "`secret-tool lookup mail-app-pass soul.nassau@gmail.com`"
+
+# uses from
+source $acc_dir/com.gmail.settings
+
+set signature = $sig_dir/$gmail_sn
+
+unmailboxes *
+mailboxes \
+	"* SOUL NASSAU *" \
+	$my_inbox
+# vim: ft=neomuttrc

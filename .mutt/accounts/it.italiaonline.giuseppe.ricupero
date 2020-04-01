@@ -1,0 +1,44 @@
+# user defined variables
+set my_inbox="=GOODBOX"
+set my_drafts="=Bozze"
+set my_current_archive="=Archivio/$current_year"
+set my_sent="=Posta inviata"
+set my_trash="=Posta eliminata"
+set my_user = "d7392@italiaonline.it"
+set my_pass = "`secret-tool lookup mail-app-pass d7392@italiaonline.it`"
+
+# user
+set realname = "Giuseppe Ricupero"
+set from = "giuseppe.ricupero@italiaonline.it"
+
+# connection
+set folder = "imap://outlook.office365.com"
+set imap_user = $my_user
+set imap_pass = $my_pass
+set smtp_url = "smtp://$my_user@smtp.office365.com:587/"
+set smtp_pass = $my_pass
+# set ssl_starttls = yes
+# set ssl_force_tls = yes
+# set ssl_use_sslv3 = yes
+set spoolfile = $my_inbox
+set postponed = $my_drafts
+set trash = $my_trash
+# the server always copy the sent message so don't do it
+set copy = no
+unset record
+
+# sidebar manipulation
+unmailboxes *
+mailboxes \
+	$my_inbox \
+	=cc \
+	=jira \
+	=cron \
+	=ADP
+
+# signature directly from a script
+set signature = "~/bin/NEQMailSignature.sh|"
+
+# reload bindings with the new variables
+source $mhome/bindings
+# vim: ft=neomuttrc

@@ -1,0 +1,22 @@
+# user
+set realname = "Giuseppe Ricupero"
+set from = "giuseppe.ricupero@gmail.com"
+set my_pass = "`secret-tool lookup mail-app-pass giuseppe.ricupero@gmail.com`"
+
+# it uses $from
+source $acc_dir/com.gmail.settings
+
+unset signature
+
+unmailboxes *
+mailboxes \
+	"* PERSONAL *" \
+	$my_inbox \
+	$my_inbox/agenda \
+	$my_inbox/sella \
+	$my_inbox/bolletta_cb \
+	$my_inbox/previmedical \
+	$my_inbox/e-commerce \
+	$my_inbox/code-ml \
+	$my_inbox/groovy-calamari
+# vim: ft=neomuttrc

@@ -9,6 +9,9 @@ set my_polito_gr="it.polito.giuseppe.ricupero"
 set my_cert_gr="it.postecert.giuseppe.ricupero"
 set my_current_year="`date +'%Y'`"
 
+# certificate
+set certificate_file = "$my_mhome/certificates"
+
 # Default account
 source $my_acc_dir/$my_iol_gr
 
@@ -26,9 +29,9 @@ source $alias_file
 source $my_mhome/sidebar
 
 ## mailcap
-set mailcap_path = $my_mhome/mailcap
 # autoview for all the types supported in mailcap
 set implicit_autoview
+set mailcap_path = $my_mhome/mailcap
 ## mailcap - end
 
 # theme

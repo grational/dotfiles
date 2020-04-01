@@ -19,5 +19,5 @@ set copy = no
 unset record
 
 # reload bindings with the new variables
-source $my_mhome/bindings 
+source $my_mhome/bindings
 # vim: ft=muttrc

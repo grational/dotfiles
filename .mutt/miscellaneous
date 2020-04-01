@@ -1,9 +1,20 @@
-# editor settings
-bind editor <space> noop
+# bind editor <space> noop
 # bind editor <Tab>   complete-query
 set edit_headers
 set editor = "nvim -c Goyo +/^$"
 set charset = "utf-8"
+
+# make the progress updates not that expensive, this will update the bar every 300ms
+set read_inc = 1
+set time_inc = 300 
+
+# pager
+# do not show all headers, just a few
+ignore          *
+unignore        From To Cc Bcc Date Subject
+# and in this order
+unhdr_order     *
+hdr_order       From: To: Cc: Bcc: Date: Subject:
 
 ## general settings
 # don't ask me confirmation when I move messages around
@@ -17,7 +28,7 @@ set bounce
 set imap_idle = yes
 set imap_keepalive = 60
 # store message headers locally to speed things up
-# set header_cache = $my_mhome/cache/headers
+set header_cache = $my_mhome/cache/headers
 set message_cachedir = $my_mhome/cache/bodies
 # run the purge_cache script to avoid a message cache > my_message_cache_max_size
 set my_message_cache_max_size = '100M'
@@ -45,8 +56,8 @@ set delete = yes
 set pager_context=5  # Retain 5 lines of previous page when scrolling.
 set status_on_top    # Status bar on top.
 push <show-version>  # Shows mutt version at startup
-# remove + at the beginning of line when wrap, so that I can use URLs extraction
-set markers = no
+# remove + at the beginning of line when wrap
+unset markers
 # gmail like email threads organization
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
@@ -61,9 +72,9 @@ set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)
 # You can configure Mutt so that the index view is always visible when you read mails. For instance, to always show 8 mails in the index:
 set pager_index_lines=12
 # don't go to the next/previous message scrolling up/down the pager
-set pager_stop = yes
+set pager_stop
 # update stats on mail on the sidebar
-set mail_check_stats = yes
+set mail_check_stats
 ## Reload config
 # Forward a certain message to todoist and archive it
 macro index,pager \Ct "<enter-command>set forward_edit=no<enter><forward-message>todoist-inbox<enter><enter-command>set forward_edit=yes<enter>y<save-message>$my_current_archive<enter>" "Forwarded to todoist and archived!"

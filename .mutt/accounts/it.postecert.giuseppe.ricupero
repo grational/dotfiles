@@ -40,5 +40,5 @@ mailboxes \
 set signature = $realname
 
 # reload bindings with the new variables
-source $my_mhome/bindings 
+source $my_mhome/var_bindings 
 # vim: ft=neomuttrc

@@ -2,3 +2,4 @@ aliases
 cache/
 tmp/
 resources/
+bin/mutt

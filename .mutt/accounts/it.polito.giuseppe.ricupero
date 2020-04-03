@@ -6,12 +6,13 @@ set my_current_archive="=Archives/$my_current_year"
 set my_trash="=Trash"
 set my_user = "giuseppe.ricupero"
 set my_domain = "polito.it"
+set my_email = "$my_user@$my_domain"
 set my_mail_server = "mail.$my_domain"
 set my_pass = "`secret-tool lookup mail-pass giuseppe.ricupero@polito.it`"
 
 # user
 set realname = "Giuseppe Ricupero"
-set from = $my_user
+set from = $my_email
 
 # connection
 set folder = "imaps://$my_mail_server"
@@ -39,5 +40,5 @@ mailboxes \
 set signature = $realname
 
 # reload bindings with the new variables
-source $my_mhome/bindings 
+source $my_mhome/var_bindings 
 # vim: ft=neomuttrc

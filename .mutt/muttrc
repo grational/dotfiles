@@ -12,15 +12,14 @@ set my_current_year="`date +'%Y'`"
 # certificate
 set certificate_file = "$my_mhome/certificates"
 
+# bindings
+source $my_mhome/bindings
+
 # Default account
 source $my_acc_dir/$my_iol_gr
 
-# Macros
-source "$my_mhome/macros"
-
 # miscellaneous
 source "$my_mhome/miscellaneous"
-
 # alias settings
 set alias_file = $my_mhome/aliases
 source $alias_file

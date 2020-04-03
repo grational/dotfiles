@@ -5,12 +5,13 @@ set my_current_archive="=[Gmail]/Tutti i messaggi"
 set my_sent="=[Gmail]/Inviati"
 set my_trash="=[Gmail]/Cestino"
 
-set ssl_force_tls = yes
 set imap_user = $from
-set smtp_url = "smtps://$from@smtp.gmail.com:465/"
 set imap_pass = $my_pass
-set smtp_pass = $my_pass
 set folder = "imaps://imap.gmail.com:993"
+
+set smtp_url = "smtps://$from@smtp.gmail.com:465"
+set smtp_pass = $my_pass
+
 set spoolfile = $my_inbox
 set postponed = $my_drafts
 set trash = $my_trash
@@ -19,5 +20,5 @@ set copy = no
 unset record
 
 # reload bindings with the new variables
-source $my_mhome/bindings
+source $my_mhome/var_bindings
 # vim: ft=muttrc

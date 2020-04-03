@@ -3,7 +3,11 @@ macro index,pager <f3> '<sync-mailbox><enter-command>source $my_acc_dir/$my_gmai
 macro index,pager <f4> '<sync-mailbox><enter-command>source $my_acc_dir/$my_gmail_sn<enter><change-folder>!<enter>' "Soul Nassau"
 macro index,pager <f5> '<sync-mailbox><enter-command>source $my_acc_dir/$my_polito_gr<enter><change-folder>!<enter>' "Polito"
 macro index,pager <f6> '<sync-mailbox><enter-command>source $my_acc_dir/$my_cert_gr<enter><change-folder>!<enter>' "Posta Certificata"
-# macro to jump to the next unread message
-macro index,pager \C]   '<next-unread-mailbox><enter><next-new-then-unread><enter>' "Go to new mail"
 
+macro index,pager gi "<change-folder>$my_inbox<enter>"           "open inbox"
+macro index,pager gd "<change-folder>$my_drafts<enter>"          "open drafts"
+macro index,pager gs "<change-folder>$my_sent<enter>"            "open sent"
+macro index,pager gt "<change-folder>$my_trash<enter>"           "open trash"
+macro index,pager ga "<change-folder>$my_current_archive<enter>" "open the most recent archive"
+macro index,pager yy "<save-message>$my_current_archive<enter>"  "archive email"
 # vim: ft=neomuttrc

@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# email_client=/usr/bin/mutt
-# email_client=/usr/bin/neomutt
-email_client=~/bin/github/neomutt/neomutt
-# email_client=~/Scaricati/neomutt-20200320/neomutt
-
-$email_client "${@}"

@@ -3,3 +3,5 @@ cache/
 tmp/
 resources/
 bin/mutt
+certificates
+sensitive-data

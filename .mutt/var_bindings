@@ -1,9 +1,3 @@
-macro index,pager <f2> '<sync-mailbox><enter-command>source $my_acc_dir/$my_iol_gr<enter><change-folder>!<enter>' "Work"
-macro index,pager <f3> '<sync-mailbox><enter-command>source $my_acc_dir/$my_gmail_gr<enter><change-folder>!<enter>' "Personal"
-macro index,pager <f4> '<sync-mailbox><enter-command>source $my_acc_dir/$my_gmail_sn<enter><change-folder>!<enter>' "Soul Nassau"
-macro index,pager <f5> '<sync-mailbox><enter-command>source $my_acc_dir/$my_polito_gr<enter><change-folder>!<enter>' "Polito"
-macro index,pager <f6> '<sync-mailbox><enter-command>source $my_acc_dir/$my_cert_gr<enter><change-folder>!<enter>' "Posta Certificata"
-
 macro index,pager gi "<change-folder>$my_inbox<enter>"           "open inbox"
 macro index,pager gd "<change-folder>$my_drafts<enter>"          "open drafts"
 macro index,pager gs "<change-folder>$my_sent<enter>"            "open sent"

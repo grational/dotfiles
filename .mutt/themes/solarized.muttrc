@@ -79,3 +79,4 @@ color body color214 color234 "^gpg: There is no indication that the signature be
 color body color214 color234 "^gpg: can't handle these multiple signatures"
 color body color214 color234 "^gpg: signature verification suppressed"
 color body color214 color234 "^gpg: invalid node with packet of type"
+# vim: ft=neomuttrc

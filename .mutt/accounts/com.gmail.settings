@@ -1,9 +1,9 @@
 # user defined variables
 set my_inbox="=INBOX"
-set my_drafts="=[Gmail]/Bozze"
-set my_current_archive="=[Gmail]/Tutti i messaggi"
-set my_sent="=[Gmail]/Inviati"
-set my_trash="=[Gmail]/Cestino"
+set my_drafts="=[Gmail]/Drafts"
+set my_archive="=[Gmail]/All Mail"
+set my_sent="=[Gmail]/Sent Mail"
+set my_trash="=[Gmail]/Trash"
 
 set imap_user = $from
 set imap_pass = $my_pass

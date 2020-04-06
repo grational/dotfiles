@@ -2,7 +2,7 @@
 set my_inbox="=INBOX"
 set my_drafts="=Drafts"
 set my_sent="=Sent Items"
-set my_current_archive="=Archives/$my_current_year"
+set my_archive="=Archives"
 set my_trash="=trash"
 set my_domain = "postecert.it"
 set my_mail_server = "mail.$my_domain"
@@ -26,14 +26,15 @@ set postponed = $my_drafts
 set copy = yes
 set record = $my_sent
 set trash = $my_trash
+set mbox = "$my_archive/`date +%Y`"
+save-hook . "$my_archive/%[%Y]"
 
 # sidebar manipulation
 unmailboxes *
 # set imap_check_subscribed
 mailboxes \
 	$my_inbox \
-	=Archives/2019 \
-	$my_current_archive \
+	$mbox \
 	$my_sent
 
 # signature directly from a script

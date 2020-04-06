@@ -1,7 +1,7 @@
 # user defined variables
 set my_inbox = "=GOODBOX"
 set my_drafts = "=Bozze"
-set my_current_archive = "=Archivio/$my_current_year"
+set my_archive = "=Archivio"
 set my_sent = "=Posta inviata"
 set my_trash = "=Posta eliminata"
 set my_user = "d7392@italiaonline.it"
@@ -20,6 +20,8 @@ set smtp_pass = $my_pass
 set spoolfile = $my_inbox
 set postponed = $my_drafts
 set trash = $my_trash
+set mbox = "$my_archive/`date +%Y`"
+save-hook . "$my_archive/%[%Y]"
 # the server always copy the sent message so don't do it
 set copy = no
 unset record

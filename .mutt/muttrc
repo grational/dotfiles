@@ -7,7 +7,6 @@ set my_gmail_gr="com.gmail.giuseppe.ricupero"
 set my_gmail_sn="com.gmail.soul.nassau"
 set my_polito_gr="it.polito.giuseppe.ricupero"
 set my_cert_gr="it.postecert.giuseppe.ricupero"
-set my_current_year="`date +'%Y'`"
 
 # certificate
 set certificate_file = "$my_mhome/certificates"

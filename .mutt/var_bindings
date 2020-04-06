@@ -8,6 +8,6 @@ macro index,pager gi "<change-folder>$my_inbox<enter>"           "open inbox"
 macro index,pager gd "<change-folder>$my_drafts<enter>"          "open drafts"
 macro index,pager gs "<change-folder>$my_sent<enter>"            "open sent"
 macro index,pager gt "<change-folder>$my_trash<enter>"           "open trash"
-macro index,pager ga "<change-folder>$my_current_archive<enter>" "open the most recent archive"
-macro index,pager yy "<save-message>$my_current_archive<enter>"  "archive email"
+macro index,pager ga "<change-folder>$mbox<enter>" "open archive"
+macro index,pager yy "<save-message>$mbox<enter>"  "archive email"
 # vim: ft=neomuttrc

@@ -2,7 +2,7 @@
 set my_inbox="=INBOX"
 set my_drafts="=Drafts"
 set my_sent="=Sent"
-set my_current_archive="=Archives/$my_current_year"
+set my_archive="=Archives"
 set my_trash="=Trash"
 set my_user = "giuseppe.ricupero"
 set my_domain = "polito.it"
@@ -25,6 +25,8 @@ set smtp_pass = $my_pass
 set spoolfile = $my_inbox
 set postponed = $my_drafts
 set trash = $my_trash
+set mbox = "$my_archive/`date +%Y`"
+save-hook . "$my_archive/%[%Y]"
 set copy = yes
 set record = $my_sent
 
@@ -33,7 +35,7 @@ unmailboxes *
 # set imap_check_subscribed
 mailboxes \
 	$my_inbox \
-	$my_current_archive \
+	$mbox \
 	$my_sent
 
 # signature directly from a script

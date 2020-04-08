@@ -2,10 +2,12 @@
 # aerc filter which runs w3m using socksify (from the dante package) to prevent
 # any phoning home by rendered emails
 export SOCKS_SERVER="127.0.0.1:1"
+charset="${1:-UTF-8}"
 exec socksify w3m \
 	-T text/html \
 	-cols $(tput cols) \
 	-dump \
 	-graph \
-	-o display_image=true \
+	-I "${charset}"
+	-o display_image=false \
 	-o display_link_number=true

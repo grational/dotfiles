@@ -1,13 +1,13 @@
 # handle octet-stream attachments
 mime_lookup application/octet-stream
 text/html ; uconv --add-signature -f %{charset} -t UTF-8 %s | sponge %s && sensible-browser %s & sleep 2 ; description="HTML Document" ; test=test -n "$DISPLAY" ; nametemplate=%s.html
+# Terminal programs
+application/ics;          khal import %s; needsterminal
+text/calendar;            khal import %s; needsterminal
+application/ms-tnef;      tnef -w %s;     needsterminal
+
 # editing email with Goyo enabled - need to stay after HTML
 text/* ; nvim -Rc Goyo '%s' ; edit=nvim -c Goyo '%s' ; compose=nvim -c Goyo '%s' ; needsterminal
-
-# Terminal programs
-# application/ics;          khal import -a $from %s; needsterminal
-# text/calendar;            khal import -a $from %s; needsterminal
-application/ms-tnef;      tnef -w %s;              needsterminal
 
 # GUI programs
 application/*;            mutt-open.sh %s
@@ -32,6 +32,6 @@ text/calendar;            mutt-ics;                                             
 application/pdf;          pdftotext -fixed 8 -l 2 %s - 2>/dev/null;                         copiousoutput
 application/x-pdf;        pdftotext -fixed 8 -l 2 %s - 2>/dev/null;                         copiousoutput
 application/ms-tnef;      tnef -w %s;                                                       copiousoutput
-text/html;                html_filter.sh; copiousoutput
+text/html;                html_filter.sh %{charset}; copiousoutput
 application/vnd.openxmlformats-officedocument.wordprocessingml.document; pandoc --from docx --to markdown %s; copiousoutput
 application/vnd.oasis.opendocument.text; pandoc --from odt --to markdown %s; copiousoutput

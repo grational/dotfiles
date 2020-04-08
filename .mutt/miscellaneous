@@ -1,10 +1,13 @@
-# bind editor <space> noop
+# workaround for the issue
+bind editor <space> noop
 # bind editor <Tab>   complete-query
+
+# e-mail composition
 set edit_headers
 set editor = "nvim -c Goyo +/^$"
 set charset = "utf-8"
 
-# make the progress updates not that expensive, this will update the bar every 300ms
+# make the progress updates the bar every 300ms
 set read_inc = 1
 set time_inc = 300 
 

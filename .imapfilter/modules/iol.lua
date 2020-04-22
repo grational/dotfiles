@@ -68,11 +68,10 @@ function iol.filters()
 		'google-maps-noreply@google.com'
 	)
 
-	local remaining_inbox_emails = filters.all_inbox_emails(account)
 	filters.move_to (
 		'GOODBOX',
 		account,
-		remaining_inbox_emails
+		mails
 	)
 
 	filters.labeled_status(account, folders)

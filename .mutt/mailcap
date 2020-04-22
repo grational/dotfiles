@@ -1,6 +1,6 @@
 # handle octet-stream attachments
 mime_lookup application/octet-stream
-text/html ; uconv --add-signature -f %{charset} -t UTF-8 %s | sponge %s && sensible-browser %s & sleep 2 ; description="HTML Document" ; test=test -n "$DISPLAY" ; nametemplate=%s.html
+text/html ; uconv --add-signature -f %{charset} -t UTF-8 %s | sponge %s && sensible-browser %s & sleep 3 ; description="HTML Document" ; test=test -n "$DISPLAY" ; nametemplate=%s.html
 # Terminal programs
 application/ics;          khal import %s; needsterminal
 text/calendar;            khal import %s; needsterminal
@@ -24,14 +24,14 @@ text/*;                   mutt-open.sh %s
 # text/csv; xdg-open %s & sleep 10; test=test -n "$DISPLAY"
 
 # Autoview
-application/octet-stream; mutt.octet.filter %s;                                             copiousoutput
-application/msword;       antiword -w 96 %s 2>/dev/null;                                    copiousoutput
-application/ics;          mutt-ics;                                                         copiousoutput
-text/calendar;            mutt-ics;                                                         copiousoutput
-# application/pdf;          pdftotext -layout %s -;                                           copiousoutput
-application/pdf;          pdftotext -fixed 8 -l 2 %s - 2>/dev/null;                         copiousoutput
-application/x-pdf;        pdftotext -fixed 8 -l 2 %s - 2>/dev/null;                         copiousoutput
-application/ms-tnef;      tnef -w %s;                                                       copiousoutput
-text/html;                html_filter.sh %{charset}; copiousoutput
+application/octet-stream; mutt.octet.filter %s;                                                               copiousoutput
+application/msword;       antiword -w 96 %s 2>/dev/null;                                                      copiousoutput
+application/ics;          mutt-ics;                                                                           copiousoutput
+text/calendar;            mutt-ics;                                                                           copiousoutput
+# application/pdf;          pdftotext -layout %s -;                                                             copiousoutput
+application/pdf;          pdftotext -fixed 8 -l 2 %s - 2>/dev/null;                                           copiousoutput
+application/x-pdf;        pdftotext -fixed 8 -l 2 %s - 2>/dev/null;                                           copiousoutput
+application/ms-tnef;      tnef -w %s;                                                                         copiousoutput
+text/html;                html_filter.sh %{charset};                                                          copiousoutput
 application/vnd.openxmlformats-officedocument.wordprocessingml.document; pandoc --from docx --to markdown %s; copiousoutput
-application/vnd.oasis.opendocument.text; pandoc --from odt --to markdown %s; copiousoutput
+application/vnd.oasis.opendocument.text; pandoc --from odt --to markdown %s;                                  copiousoutput
